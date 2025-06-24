@@ -107,7 +107,6 @@
 @endsection
 
 @push('scripts')
-{{-- Chart.js sudah di-load oleh layout admin, kita tinggal menggunakannya --}}
 <script>
     // Mengambil data dari controller yang sudah di-passing ke view
     var chartLabels = {!! json_encode($chartLabels) !!};
