@@ -9,16 +9,6 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FinanceController;
 use App\Http\Controllers\CommitteeController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Di sinilah Anda dapat mendaftarkan rute web untuk aplikasi Anda.
-| Rute-rute ini dimuat oleh RouteServiceProvider dan semuanya akan
-| ditugaskan ke grup middleware "web".
-|
-*/
 
 // ======================================================================
 // RUTE PUBLIK (Dapat diakses oleh semua orang, termasuk Guest)

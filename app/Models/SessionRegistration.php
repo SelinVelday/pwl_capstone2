@@ -10,9 +10,9 @@ class SessionRegistration extends Model
     use HasFactory;
 
     protected $fillable = [
-        'registration_id',    // <--- TAMBAHKAN INI
-        'sub_event_id',       // <--- TAMBAHKAN INI
-        'attended_session',   // <--- TAMBAHKAN INI (jika diatur saat create/update)
+        'registration_id',
+        'sub_event_id',
+        'attended_session',
     ];
 
     // Relasi ke Pendaftaran Event Utama
