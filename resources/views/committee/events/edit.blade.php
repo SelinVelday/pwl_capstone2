@@ -10,12 +10,26 @@
                 <div class="card-title">Formulir Edit Event: {{ $event->name }}</div>
             </div>
             <div class="card-body">
-                {{-- Formulir ini akan mengirim data ke route 'committee.events.update' dengan metode PUT --}}
                 <form method="POST" action="{{ route('committee.events.update', $event) }}" enctype="multipart/form-data">
                     @method('PUT')
+                    @csrf
+
+                    {{-- ====================================================== --}}
+                    {{-- === BLOK INI AKAN MENAMPILKAN SEMUA ERROR VALIDASI === --}}
+                    {{-- ====================================================== --}}
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <h4 class="alert-heading">Terjadi Kesalahan!</h4>
+                            <ul class="mb-0">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    {{-- ====================================================== --}}
                     
-                    {{-- Menggunakan partial view yang sama dengan form 'create' untuk isi formulirnya --}}
-                    {{-- File ini (_form.blade.php) harus ada di dalam folder yang sama --}}
+                    {{-- Memanggil file partial form --}}
                     @include('committee.events._form')
 
                     <div class="card-action">

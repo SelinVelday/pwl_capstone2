@@ -13,9 +13,11 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="time">Waktu</label>
-            <input type="time" class="form-control" name="time" value="{{ old('time', $event->time ?? '') }}" required>
-        </div>
+            <input type="time" class="form-control" name="time" value="{{ old('time', $event->time ?? '') }}" required placeholder="HH:MM">
+            <small class="form-text text-muted">Gunakan format 24 jam, contoh: 09:00 atau 15:30.</small>
+            @error('time') <small class="form-text text-danger">{{ $message }}</small> @enderror
     </div>
+</div>
 </div>
 <div class="form-group">
     <label for="speaker">Narasumber</label>

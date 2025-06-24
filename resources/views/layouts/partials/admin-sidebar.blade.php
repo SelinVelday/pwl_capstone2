@@ -51,16 +51,34 @@
                     </li>
                 @endif
 
-                {{-- Menu untuk Finance --}}
+                {{-- ====================================================== --}}
+                {{-- === PERUBAHAN: MENU UNTUK FINANCE MENJADI DROPDOWN === --}}
+                {{-- ====================================================== --}}
                 @if(Auth::user()->role == 'finance')
                     <li class="nav-item {{ request()->routeIs('finance.payments.*') ? 'active' : '' }}">
-                        <a href="{{ route('finance.payments.pending') }}">
+                        <a data-bs-toggle="collapse" href="#financeMenu">
                             <i class="fas fa-money-check-alt"></i>
-                            <p>Verifikasi Pembayaran</p>
+                            <p>Pembayaran</p>
+                            <span class="caret"></span>
                         </a>
+                        <div class="collapse {{ request()->routeIs('finance.payments.*') ? 'show' : '' }}" id="financeMenu">
+                            <ul class="nav nav-collapse">
+                                <li class="{{ request()->routeIs('finance.payments.pending') ? 'active' : '' }}">
+                                    <a href="{{ route('finance.payments.pending') }}">
+                                        <span class="sub-item">Verifikasi Tertunda</span>
+                                    </a>
+                                </li>
+                                <li class="{{ request()->routeIs('finance.payments.verified') ? 'active' : '' }}">
+                                    <a href="{{ route('finance.payments.verified') }}">
+                                        <span class="sub-item">Riwayat Terverifikasi</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 @endif
-                
+                {{-- ====================================================== --}}
+
             </ul>
         </div>
     </div>
