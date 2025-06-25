@@ -43,7 +43,7 @@ class CommitteeController extends Controller
         // =================================================================
         // === PERUBAHAN: TITIK DEBUG DITAMBAHKAN DI SINI ===
         // =================================================================
-        dd($request->all(), 'Apakah ada file poster?', $request->hasFile('poster'), 'Detail file:', $request->file('poster'));
+        // dd($request->all(), 'Apakah ada file poster?', $request->hasFile('poster'), 'Detail file:', $request->file('poster'));
         // =================================================================
 
 
